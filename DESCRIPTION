@@ -12,6 +12,7 @@ LazyData: true
 URL: https://github.com/bradrg/rgopt
 BugReports: https://github.com/bradrg/rgopt/issues
 Depends:
-  roboglobal
+  roboglobal,
+  rAMPL
 Remotes:
   bradrg/roboglobal

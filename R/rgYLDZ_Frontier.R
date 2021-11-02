@@ -35,6 +35,7 @@ rgYLDZ_Frontier <- function() {
 
   setSQL(origTO)
 
+  ampl$close()
   output <- r %>% mutate(runTime = Sys.time())
   rgSqlSave(output, "ROBO", "portYLDZ_OptFrontier", append = F, overwrite = T)
 

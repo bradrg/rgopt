@@ -28,9 +28,9 @@ rgYLDZ_Frontier <- function() {
   minTO <- runSolve(0)
 
   minTO_value <- floor((minTO %>% pull(TO_Actual))*2)/2
-  maxTO_value <- ceiling((maxTO %>% pull(TO_Actual))*10)/10
+  maxTO_value <- ceiling((maxTO %>% pull(TO_Actual))*5)/5
 
-  to_values <- c(seq(0, .09, .02), seq(.1, 1, .1))
+  to_values <- c(seq(0, .09, .02), seq(.1, 1, .05))
   r <- map_df(to_values[between(to_values, minTO_value, maxTO_value)], runSolve)
 
   setSQL(origTO)

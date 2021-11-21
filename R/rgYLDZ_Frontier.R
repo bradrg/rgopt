@@ -35,8 +35,8 @@ rgYLDZ_Frontier <- function() {
   rgSqlSave(minTO, "ROBO", "portYLDZ_OptFrontier", append = T, overwrite = F)
 
   maxTO <- runSolve(1)
-  minTO_value <- floor((minTO %>% pull(TO_Actual))*2)/2
-  maxTO_value <- ceiling((maxTO %>% pull(TO_Actual))*5)/5
+  minTO_value <- floor((minTO %>% pull(TO_Actual))/.02)*.02
+  maxTO_value <- ceiling((maxTO %>% pull(TO_Actual))/.05)*.05
 
   to_values <- c(seq(0, .09, .02), seq(.1, 1, .05))
   to_values <- to_values[between(to_values, pmax(minTO_value, .001), maxTO_value)]
